@@ -122,9 +122,9 @@ export function App(props: { game: Game; root: Element }) {
   }
 
   const onKeyDown = (e: KeyboardEvent) => {
-    if (!isActive()) {
-      return
-    }
+    if (!isActive()) return
+
+    if (gameState.mode === PlayerMode.FREE) return
 
     switch (e.code) {
       case 'KeyF': {

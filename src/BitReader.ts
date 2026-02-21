@@ -3,7 +3,7 @@ export class BitView {
 
   private view: Uint8Array
 
-  constructor(buffer: ArrayBuffer) {
+  constructor(buffer: ArrayBufferLike) {
     this.view = new Uint8Array(buffer, 0, buffer.byteLength)
   }
 
@@ -89,7 +89,7 @@ export class BitStream {
   private view: BitView
   index: number
 
-  constructor(source: ArrayBuffer) {
+  constructor(source: ArrayBufferLike) {
     this.view = new BitView(source)
     this.index = 0
   }
@@ -187,4 +187,3 @@ export class BitStream {
     }
   }
 }
-
